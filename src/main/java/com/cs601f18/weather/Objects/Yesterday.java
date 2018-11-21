@@ -1,13 +1,24 @@
 package com.cs601f18.weather.Objects;
 
-public class Yesterday {
+import java.io.Serializable;
+
+public class Yesterday implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private String date;
     private String high;
     private String low;
-    private String direction;
-    private String power;
+    private String fx;
+    private String fl;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getDate() {
         return date;
@@ -33,20 +44,20 @@ public class Yesterday {
         this.low = low;
     }
 
-    public String getDirection() {
-        return direction;
+    public String getFx() {
+        return fx;
     }
 
-    public void setDirection(String direction) {
-        this.direction = direction;
+    public void setFx (String fx) {
+        this.fx = fx;
     }
 
-    public String getPower() {
-        return power;
+    public String getFl() {
+        return fl;
     }
 
-    public void setPower(String power) {
-        this.power = power;
+    public void setFl(String fl) {
+        this.fl = fl;
     }
 
 

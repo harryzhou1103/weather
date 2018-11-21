@@ -1,15 +1,18 @@
 package com.cs601f18.weather.Objects;
 
 
+import java.io.Serializable;
+
 //The class of weather in the future
-public class Forecast {
+public class Forecast implements Serializable {
     private static final long serialVersionUID = 1L;
     private String date;
     private String high;
-    private String direction;
+    private String fengxiang;
     private String low;
-    private String power;
+    private String fengli;
     private String type;
+
 
     public String getDate() {
         return date;
@@ -27,12 +30,12 @@ public class Forecast {
         this.high = high;
     }
 
-    public String getDirection() {
-        return direction;
+    public String getFengxiang() {
+        return fengxiang;
     }
 
-    public void setDirection(String direction) {
-        this.direction = direction;
+    public void setFengxiang(String fengxiang) {
+        this.fengxiang = fengxiang;
     }
 
     public String getLow() {
@@ -43,12 +46,12 @@ public class Forecast {
         this.low = low;
     }
 
-    public String getPower() {
-        return power;
+    public String getFengli() {
+        return fengli;
     }
 
-    public void setPower(String power) {
-        this.power = power;
+    public void setFengli(String fengli) {
+        this.fengli = fengli;
     }
 
     public String getType() {
@@ -58,7 +61,6 @@ public class Forecast {
     public void setType(String type) {
         this.type = type;
     }
-
 
 
 }

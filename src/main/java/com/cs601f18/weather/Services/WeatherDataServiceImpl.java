@@ -4,10 +4,12 @@ import com.cs601f18.weather.Objects.WeatherResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 
+@Service
 public class WeatherDataServiceImpl implements WeatherDataService {
 
     private static final String QUERYURLBYCITYID = "http://wthrcdn.etouch.cn/weather_mini?citykey=";
@@ -37,6 +39,7 @@ public class WeatherDataServiceImpl implements WeatherDataService {
         String strBody = null;
         if (resString.getStatusCodeValue() == 200) {
             strBody = resString.getBody();
+            System.out.println(strBody);
         }
         ObjectMapper mapper = new ObjectMapper();
 

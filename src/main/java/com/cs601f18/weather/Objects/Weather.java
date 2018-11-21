@@ -5,13 +5,14 @@ import java.util.List;
 
 
 public class Weather {
+
     private static final long serialVersionUID = 1L;
     private String city;
     private Yesterday yesterday;
     private String aqi;
-    private List<Forecast> forecastList;
-    private String suggestion;
-    private String temperature;
+    private List<Forecast> forecast;
+    private String ganmao;
+    private String wendu;
 
     public String getCity() {
         return city;
@@ -37,28 +38,28 @@ public class Weather {
         this.aqi = aqi;
     }
 
-    public List<Forecast> getForecastList() {
-        return forecastList;
+    public List<Forecast> getForecast() {
+        return forecast;
     }
 
-    public void setForecastList(List<Forecast> forecastList) {
-        this.forecastList = forecastList;
+    public void setForecast(List<Forecast> forecast) {
+        this.forecast = forecast;
     }
 
-    public String getSuggestion() {
-        return suggestion;
+    public String getGanmao() {
+        return ganmao;
     }
 
-    public void setSuggestion(String suggestion) {
-        this.suggestion = suggestion;
+    public void setGanmao(String ganmao) {
+        this.ganmao = ganmao;
     }
 
-    public String getTemperature() {
-        return temperature;
+    public String getWendu() {
+        return wendu;
     }
 
-    public void setTemperature(String temperature) {
-        this.temperature = temperature;
+    public void setWendu(String wendu) {
+        this.wendu = wendu;
     }
 
 }

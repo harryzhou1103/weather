@@ -1,17 +1,20 @@
 package com.cs601f18.weather.Objects;
 
-public class WeatherResponse {
+import java.io.Serializable;
 
-    private Weather weather;
+public class WeatherResponse implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    private Weather data;
     private Integer status;
     private String desc;
 
-    public Weather getWeather() {
-        return weather;
+    public Weather getData() {
+        return data;
     }
 
-    public void setWeather(Weather weather) {
-        this.weather = weather;
+    public void setData(Weather data) {
+        this.data = data;
     }
 
     public Integer getStatus() {
