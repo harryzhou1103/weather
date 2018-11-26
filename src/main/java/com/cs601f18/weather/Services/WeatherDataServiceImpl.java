@@ -41,9 +41,28 @@ public class WeatherDataServiceImpl implements WeatherDataService {
         return doGetWeather(url);
     }
 
+    public void syncDataByCityId(String cityId) {
+            String url = QUERY_URL_BY_CITYID + cityId;
+            saveWeatherData(url);
+    }
+
+    private void saveWeatherData(String url) {
+        String key = url;
+        String strBody = null;
+        ValueOperations<String, String> operations = stringRedisTemplate.opsForValue();
+
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+
+        if (response.getStatusCodeValue() == 200) {
+            strBody = response.getBody();
+        }
+
+        operations.set(key, strBody, TIMEOUT, TimeUnit.SECONDS);
+    }
+
     private WeatherResponse doGetWeather(String url) {
         WeatherResponse res = null;
-        String key = null;
+        String key = url;
         ValueOperations<String, String> operations = stringRedisTemplate.opsForValue();
         String strBody = null;
         ObjectMapper mapper = new ObjectMapper();

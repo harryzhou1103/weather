@@ -14,6 +14,9 @@ public class XmlBuilder {
         Unmarshaller unmarshaller = context.createUnmarshaller();
         reader = new StringReader(xmlStr);
         xmlObject = unmarshaller.unmarshal(reader);
+        if (reader != null) {
+            reader.close();
+        }
         return xmlObject;
     }
 }

@@ -23,7 +23,8 @@ public class QuartzConfiguration {
     public Trigger weatherDataSyncTrigger() {
 
         SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
-                .withIntervalInSeconds(15).repeatForever();
+                .withIntervalInSeconds(1800).repeatForever();
+        //update the data every half an hour
 
         return TriggerBuilder.newTrigger().forJob(weatherDataSyncJobJobDetail())
                 .withIdentity("weatherDataSyncTrigger").withSchedule(scheduleBuilder).build();
